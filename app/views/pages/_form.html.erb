@@ -1,0 +1,23 @@
+<div class="form">
+  <%= form_for score, url: pages_create_path do |f| %>
+  	<%= f.label :flow_balance %>
+    <%= f.number_field :flow_balance, min: 0, max: 9, required: true %>
+    <br>
+
+    <%= f.label :impact_factor %>
+    <%= f.number_field :impact_factor, min: 0, max: 9, required: true %>
+    <br>
+    
+    <%= f.label :conclusion %>
+    <%= f.number_field :conclusion, min: 0, max: 9, required: true %>
+    <br>
+    
+    <%= f.label :question_and_answer %>
+    <%= f.number_field :question_and_answer, min: 0, max: 9, required: true %>
+    <br>
+    
+  	<%= hidden_field_tag :project_id, project.id %>
+
+    <%= f.submit 'Submit' %>
+  <% end %>
+</div>

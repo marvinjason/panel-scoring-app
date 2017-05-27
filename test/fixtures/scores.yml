@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flow_balance: 1
+  impact_factor: 1
+  conclusion: 1
+  question_and_answer: 1
+
+two:
+  flow_balance: 1
+  impact_factor: 1
+  conclusion: 1
+  question_and_answer: 1

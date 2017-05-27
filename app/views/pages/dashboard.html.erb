@@ -1,0 +1,34 @@
+<input type="radio" name="r-btn" value="standby">Standby<br>
+
+<% @projects.each do |project| %>
+  <input type="radio" name="r-btn" value="<%= project.id %>"><%= project.name %><br>
+<% end %>
+
+<button class="move">Move</button>
+<br>
+<button class="show">Show form</button>
+<button class="hide">Hide form</button>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Flow Balance</td>
+    <td>Impact Factor</td>
+    <td>Conclusion</td>
+    <td>Question &amp; Answer</td>
+  </tr>
+  <% @projects.each do |project| %>
+    <tr>
+      <td colspan="5"><strong><%= project.name %></strong></td>
+    </tr>
+    <% project.scores.each do |score| %>
+      <tr>
+        <td><%= score.user.email %></td>
+        <td><%= score.flow_balance %></td>
+        <td><%= score.impact_factor %></td>
+        <td><%= score.conclusion %></td>
+        <td><%= score.question_and_answer %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
