@@ -7,15 +7,15 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    if (window.location.href != 'http://localhost:3000/dashboard')
+    if (window.location.href.indexOf('dashboard') < 0)
       if (data['message'] == 'standby')
-        window.location.replace('http://localhost:3000/standby')
+        window.location.replace('/standby')
       else if (data['message'] == 'show')
         $('.form').show();
       else if (data['message'] == 'hide')
         $('.form').hide();
       else
-        window.location.replace('http://localhost:3000/thesis/' + data['message'])
+        window.location.replace('/thesis/' + data['message'])
 
   move: (message) ->
     @perform 'move', message: message
