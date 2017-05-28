@@ -60,15 +60,16 @@
   z-index: 1;
 
   label {
-    font-size: 3em;
+    font-size: 1em;
   }
 
   input {
-    font-size: 3em;
+    //font-size: 5em;
   }
 
-  input[type=number] {
-    height: 2em;
+  input[type=submit] {
+    //height: 1em;
+    //font-size: 1em;
   }
 }
 
