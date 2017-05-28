@@ -1,5 +1,8 @@
-<div class="thesis-bg" style="background-image: url(<%= image_path @project.id %>)"></div>
+<div class="thesis-bg" style="background-image: url(<%= image_path @project.id %>)">
+  <div class="blur"></div>
+  <div class="center-form">
+    <%= render 'form', score: @score, project: @project %> 
+  </div>
+</div>
 
-<%= render 'form', score: @score, project: @project %>
-
-<%= render 'status_bar' %>
+<%#= render 'status_bar' %>

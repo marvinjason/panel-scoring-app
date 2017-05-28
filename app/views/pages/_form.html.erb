@@ -1,23 +1,35 @@
-<div class="form">
+<div class="form container">
   <%= form_for score, url: pages_create_path do |f| %>
-  	<%= f.label :flow_balance %>
-    <%= f.number_field :flow_balance, min: 0, max: 9, required: true %>
+  	<%= f.label :flow_balance, 'Flow Balance' %>
     <br>
 
-    <%= f.label :impact_factor %>
-    <%= f.number_field :impact_factor, min: 0, max: 9, required: true %>
+    <%= f.number_field :flow_balance, min: 0, max: 9, required: true, class: 'form-control' %>
+    <br>
+    <br>
+
+    <%= f.label :impact_factor, 'Impact Factor' %>
+    <br>
+
+    <%= f.number_field :impact_factor, min: 0, max: 9, required: true, class: 'form-control' %>
+    <br>
     <br>
     
-    <%= f.label :conclusion %>
-    <%= f.number_field :conclusion, min: 0, max: 9, required: true %>
+    <%= f.label :conclusion, 'Conclusion' %>
+    <br>
+
+    <%= f.number_field :conclusion, min: 0, max: 9, required: true, class: 'form-control' %>
+    <br>
     <br>
     
-    <%= f.label :question_and_answer %>
-    <%= f.number_field :question_and_answer, min: 0, max: 9, required: true %>
+    <%= f.label :question_and_answer, 'Answer & Question' %>
+    <br>
+
+    <%= f.number_field :question_and_answer, min: 0, max: 9, required: true, class: 'form-control' %>
+    <br>
     <br>
     
   	<%= hidden_field_tag :project_id, project.id %>
 
-    <%= f.submit 'Submit' %>
+    <%= f.submit 'Submit', class: 'btn btn-success center-block' %>
   <% end %>
 </div>

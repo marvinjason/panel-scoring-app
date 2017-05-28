@@ -44,8 +44,40 @@
   }
 }
 
+.center-form {
+  widht: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .form {
   display: none;
+  width: 90%;
+  background-color: rgba(255,255,255,1);
+  padding: 5%;
+  z-index: 1;
+
+  label {
+    font-size: 3em;
+  }
+
+  input {
+    font-size: 3em;
+  }
+
+  input[type=number] {
+    height: 2em;
+  }
+}
+
+.blur {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.75);
+  position: absolute;
 }
 
 table {

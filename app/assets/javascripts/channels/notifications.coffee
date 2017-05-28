@@ -11,9 +11,9 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
       if (data['message'] == 'standby')
         window.location.replace('/standby')
       else if (data['message'] == 'show')
-        $('.form').show();
+        $('.form, .blur').show();
       else if (data['message'] == 'hide')
-        $('.form').hide();
+        $('.form, .blur').hide();
       else
         window.location.replace('/thesis/' + data['message'])
 
