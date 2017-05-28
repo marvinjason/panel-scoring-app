@@ -6,19 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Project.create name: 'Jac Liner Bus Buddy'
-Project.create name: 'English to Chavacano'
-Project.create name: 'PLAPP'
-Project.create name: 'Data Structure'
-Project.create name: 'Product Review Platform'
-Project.create name: 'Online Retail System'
-Project.create name: 'TARA'
-Project.create name: 'Flying First Aid Kit'
-Project.create name: 'Android Based Path Finder'
-Project.create name: 'GAIT'
-Project.create name: 'Preggorie'
-Project.create name: 'DOTHS'
-Project.create name: 'IDECODE'
-Project.create name: 'Synctify'
-Project.create name: 'Facial'
-Project.create name: 'Kalamity'
+Project.create name: 'Jac Liner Bus Buddy', id: 1
+Project.create name: 'English to Chavacano', id: 2
+Project.create name: 'PLAPP', id: 3
+Project.create name: 'Data Structure', id: 4
+Project.create name: 'Product Review Platform', id: 5
+Project.create name: 'Online Retail System', id: 6
+Project.create name: 'TARA', id: 7
+Project.create name: 'Flying First Aid Kit', id: 8
+Project.create name: 'Android Based Path Finder', id: 9
+Project.create name: 'GAIT', id: 10
+Project.create name: 'Preggorie', id: 11
+Project.create name: 'DOTHS', id: 12
+Project.create name: 'IDECODE', id: 13
+Project.create name: 'Synctify', id: 14
+Project.create name: 'Facial', id: 15
+Project.create name: 'Kalamity', id: 16

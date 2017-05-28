@@ -12,5 +12,5 @@ $(function(){
 	$('.hide').click(function(){
 		App.notifications.hide();
 	});
-
+	
 });
