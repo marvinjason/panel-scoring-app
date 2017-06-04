@@ -6,7 +6,19 @@ $(function(){
 	});
 
 	$('.show-btn').click(function(){
-		App.notifications.show();
+		var users = "";
+
+		$('input[name=user]:checked').each(function(){
+			users += $(this).val() + ",";
+		});
+
+		users = users.slice(0, -1);
+
+		if (users == ""){
+			alert("Please tick a checkbox!");
+		} else {
+			App.notifications.show(users);
+		}
 	});
 
 	$('.hide-btn').click(function(){

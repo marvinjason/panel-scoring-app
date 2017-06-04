@@ -11,20 +11,27 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
     if (window.location.href.indexOf('dashboard') < 0)
       user_id = window.location.href.match(/^(?:(.*\/users\/))([0-9]+)(?:(.*))$/)[2]
 
-      if (data['message'] == 'standby')
-        window.location.replace("/users/#{user_id}/standby")
-      else if (data['message'] == 'show')
-        $('.form, .blur').show();
-      else if (data['message'] == 'hide')
-        $('.form, .blur').hide();
-      else
-        window.location.replace("/users/#{user_id}/thesis/#{data['message']}")
+      if (data['action'] == 'move')
+        if (data['id'] == 'standby')
+          window.location.replace("/users/#{user_id}/standby")
+        else
+          window.location.replace("/users/#{user_id}/thesis/#{data['id']}")
+      else if (data['action'] == 'show')
+        users = data['users'].split(",")
+        if user_id in users
+          $('.standby').hide();
+          $('.form, .blur').show();
+        else
+          $('.form').hide();
+          $('.standby, .blur').show();
+      else if (data['action'] == 'hide')
+        $('.form, .standby, .blur').hide();
 
   move: (message) ->
     @perform 'move', message: message
 
-  show: ->
-    @perform 'show'
+  show: (users) ->
+    @perform 'show', users: users
 
   hide: ->
     @perform 'hide'
