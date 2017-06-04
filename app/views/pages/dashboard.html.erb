@@ -6,6 +6,13 @@
 
 <button class="move-btn">Move</button>
 <br>
+
+<% @users.each do |user| %>
+  <% unless user == current_user %>
+    <input type="checkbox" name="user" value="<%= user.id %>"><%= user.email %><br>
+  <% end %>
+<% end %>
+
 <button class="show-btn">Show form</button>
 <button class="hide-btn">Hide form</button>
 

@@ -2,6 +2,10 @@ class PagesController < ApplicationController
 	before_action :authenticate_user!
   before_action :authorize, only: [:dashboard]
 
+  def root
+    redirect_to standby_path(user_id: current_user.id)
+  end
+
   def standby
   end
 
@@ -12,6 +16,7 @@ class PagesController < ApplicationController
 
   def dashboard
   	@projects = Project.all
+    @users = User.all
   end
 
   def create
@@ -19,14 +24,14 @@ class PagesController < ApplicationController
     score.project_id = params[:project_id]
     score.user = current_user
     score.save
-    redirect_to standby_path
+    redirect_to standby_path(user_id: current_user.id)
   end
 
   private
 
   def authorize
     unless current_user.is_admin?
-      redirect_to standby_path
+      redirect_to standby_path(user_id: current_user.id)
     end
   end
 

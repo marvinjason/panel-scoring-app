@@ -2,11 +2,15 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'pages#standby'
+  root 'pages#root'
 
-  get 'standby', to: 'pages#standby'
+  scope 'users/:user_id' do
 
-  get 'thesis/:id', to: 'pages#thesis'
+    get 'standby', to: 'pages#standby'
+
+    get 'thesis/:id', to: 'pages#thesis'
+
+  end
 
   get 'dashboard', to: 'pages#dashboard'
 
