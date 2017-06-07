@@ -1,30 +1,34 @@
 <div class="form container">
   <%= form_for score, url: pages_create_path do |f| %>
   	<%= f.label :flow_balance, 'Flow Balance' %>
+    <%= f.label :flow_balance, '(35%)', class: 'label-description' %>
     <br>
-
-    <%= f.number_field :flow_balance, min: 1, max: 10, required: true, class: 'form-control' %>
+    <%= f.number_field :flow_balance, min: 1, max: 10, required: true, placeholder: 'Rate from 1 to 10', class: 'form-control' %>
+    <%= f.label :flow_balance, 'How well the presentation was delivered', class: 'label-description' %>
     <br>
     <br>
 
     <%= f.label :impact_factor, 'Impact Factor' %>
+    <%= f.label :impact_factor, '(10%)', class: 'label-description' %>
     <br>
-
-    <%= f.number_field :impact_factor, min: 1, max: 10, required: true, class: 'form-control' %>
+    <%= f.number_field :impact_factor, min: 1, max: 10, required: true, placeholder: 'Rate from 1 to 10', class: 'form-control' %>
+    <%= f.label :impact_factor, 'How significant the project is towards the community/industry', class: 'label-description' %>
     <br>
     <br>
     
     <%= f.label :conclusion, 'Conclusion' %>
+    <%= f.label :conclusion, '(20%)', class: 'label-description' %>
     <br>
-
-    <%= f.number_field :conclusion, min: 1, max: 10, required: true, class: 'form-control' %>
+    <%= f.number_field :conclusion, min: 1, max: 10, required: true, placeholder: 'Rate from 1 to 10', class: 'form-control' %>
+    <%= f.label :conclusion, 'How well does the application meet the objectives', class: 'label-description' %>
     <br>
     <br>
     
     <%= f.label :question_and_answer, 'Answer & Question' %>
+    <%= f.label :question_and_answer, '(30%)', class: 'label-description' %>
     <br>
-
-    <%= f.number_field :question_and_answer, min: 1, max: 10, required: true, class: 'form-control' %>
+    <%= f.number_field :question_and_answer, min: 1, max: 10, required: true, placeholder: 'Rate from 1 to 10', class: 'form-control' %>
+    <%= f.label :question_and_answer, 'How well were the questions addressed', class: 'label-description' %>
     <br>
     <br>
     
