@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20170527145729) do
     t.integer  "impact_factor"
     t.integer  "conclusion"
     t.integer  "question_and_answer"
+    t.integer  "attire"
     t.integer  "project_id"
     t.integer  "user_id"
     t.datetime "created_at",          null: false

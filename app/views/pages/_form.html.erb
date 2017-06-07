@@ -31,6 +31,14 @@
     <%= f.label :question_and_answer, 'How well were the questions addressed', class: 'label-description' %>
     <br>
     <br>
+
+    <%= f.label :attire, 'Attire' %>
+    <%= f.label :attire, '(5%)', class: 'label-description' %>
+    <br>
+    <%= f.number_field :attire, min: 1, max: 10, required: true, placeholder: 'Rate from 1 to 10', class: 'form-control' %>
+    <%= f.label :attire, 'How presentable the presenter is', class: 'label-description' %>
+    <br>
+    <br>
     
   	<%= hidden_field_tag :project_id, project.id %>
 

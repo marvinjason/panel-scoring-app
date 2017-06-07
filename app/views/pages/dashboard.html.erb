@@ -23,10 +23,11 @@
     <td>Impact Factor</td>
     <td>Conclusion</td>
     <td>Question &amp; Answer</td>
+    <td>Attire</td>
   </tr>
   <% @projects.each do |project| %>
     <tr class="project-<%= project.id %>">
-      <td colspan="5"><strong><%= project.name %></strong></td>
+      <td colspan="6"><strong><%= project.name %></strong></td>
     </tr>
     <% project.scores.each do |score| %>
       <tr>
@@ -35,6 +36,7 @@
         <td><%= score.impact_factor %></td>
         <td><%= score.conclusion %></td>
         <td><%= score.question_and_answer %></td>
+        <td><%= score.attire %></td>
       </tr>
     <% end %>
   <% end %>

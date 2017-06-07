@@ -35,6 +35,7 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
             "<td>" + data['impact_factor'] + "</td>" +
             "<td>" + data['conclusion'] + "</td>" +
             "<td>" + data['question_and_answer'] + "</td>" +
+            "<td>" + data['attire'] + "</td>" +
           "</tr>"
         $('.project-' + data['id']).after(text);
 

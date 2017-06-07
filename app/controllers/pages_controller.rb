@@ -37,6 +37,6 @@ class PagesController < ApplicationController
 
   def score_params
     params.require(:score).permit(:id, :flow_balance,
-      :impact_factor, :conclusion, :question_and_answer)
+      :impact_factor, :conclusion, :question_and_answer, :attire)
   end
 end
