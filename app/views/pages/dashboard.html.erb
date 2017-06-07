@@ -1,4 +1,4 @@
-<input type="radio" name="r-btn" value="standby">Standby<br>
+<input type="radio" name="r-btn" value="standby" checked="checked">Standby<br>
 
 <% @projects.each do |project| %>
   <input type="radio" name="r-btn" value="<%= project.id %>"><%= project.name %><br>
