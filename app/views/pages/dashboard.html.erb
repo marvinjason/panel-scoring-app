@@ -25,7 +25,7 @@
     <td>Question &amp; Answer</td>
   </tr>
   <% @projects.each do |project| %>
-    <tr>
+    <tr class="project-<%= project.id %>">
       <td colspan="5"><strong><%= project.name %></strong></td>
     </tr>
     <% project.scores.each do |score| %>

@@ -26,3 +26,11 @@ $(function(){
 	});
 	
 });
+
+$(window).load(function(){
+	var url = window.location.href;
+
+	if (url.indexOf("a=update") >= 0){
+		App.notifications.update(url.match("(?:q=)([0-9]+)")[1]);
+	}
+});

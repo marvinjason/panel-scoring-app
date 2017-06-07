@@ -26,6 +26,17 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
           $('.standby, .blur').show();
       else if (data['action'] == 'hide')
         $('.form, .standby, .blur').hide();
+    else
+      if (data['action'] == 'update')
+        text =
+          "<tr>" +
+            "<td>" + data['email'] + "</td>" +
+            "<td>" + data['flow_balance'] + "</td>" +
+            "<td>" + data['impact_factor'] + "</td>" +
+            "<td>" + data['conclusion'] + "</td>" +
+            "<td>" + data['question_and_answer'] + "</td>" +
+          "</tr>"
+        $('.project-' + data['id']).after(text);
 
   move: (message) ->
     @perform 'move', message: message
@@ -35,3 +46,6 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
 
   hide: ->
     @perform 'hide'
+
+  update: (id) ->
+    @perform 'update', id: id

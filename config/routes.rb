@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   scope 'users/:user_id' do
 
-    get 'standby', to: 'pages#standby'
+    get 'standby', to: 'pages#standby', as: 'standby'
 
     get 'thesis/:id', to: 'pages#thesis'
 

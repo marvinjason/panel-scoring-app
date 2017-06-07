@@ -16,7 +16,7 @@ class PagesController < ApplicationController
 
   def dashboard
   	@projects = Project.all
-    @users = User.all
+    @users = User.order(:email)
   end
 
   def create
@@ -24,7 +24,7 @@ class PagesController < ApplicationController
     score.project_id = params[:project_id]
     score.user = current_user
     score.save
-    redirect_to standby_path(user_id: current_user.id)
+    redirect_to standby_path(user_id: current_user.id, a: 'update', q: score.id)
   end
 
   private

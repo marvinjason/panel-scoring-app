@@ -8,14 +8,21 @@ class NotificationsChannel < ApplicationCable::Channel
   end
 
   def move(data)
-  	ActionCable.server.broadcast 'notifications_channel', action: 'move', id: data['message']
+    ActionCable.server.broadcast 'notifications_channel', action: 'move', id: data['message']
   end
 
   def show(data)
-  	ActionCable.server.broadcast 'notifications_channel', action: 'show', users: data['users']
+    ActionCable.server.broadcast 'notifications_channel', action: 'show', users: data['users']
   end
 
   def hide
-  	ActionCable.server.broadcast 'notifications_channel', action: 'hide'
+    ActionCable.server.broadcast 'notifications_channel', action: 'hide'
+  end
+
+  def update(data)
+    score = Score.find(data['id'])
+    ActionCable.server.broadcast 'notifications_channel', action: 'update', id: score.project.id,
+      email: score.user.email, flow_balance: score.flow_balance, impact_factor: score.impact_factor,
+      conclusion: score.conclusion, question_and_answer: score.question_and_answer
   end
 end
