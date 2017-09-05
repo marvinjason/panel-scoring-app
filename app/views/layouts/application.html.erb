@@ -10,5 +10,10 @@
 
   <body>
     <%= yield %>
+
+    <% if current_user && !current_user.is_admin? %>
+    	<%= render 'status_bar' %>
+    <% end %>
+
   </body>
 </html>

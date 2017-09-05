@@ -30,12 +30,13 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
       if (data['action'] == 'update')
         text =
           "<tr>" +
-            "<td>" + data['email'] + "</td>" +
+            "<td>" + data['username'] + "</td>" +
             "<td>" + data['flow_balance'] + "</td>" +
             "<td>" + data['impact_factor'] + "</td>" +
             "<td>" + data['conclusion'] + "</td>" +
             "<td>" + data['question_and_answer'] + "</td>" +
-            "<td>" + data['attire'] + "</td>" +
+            "<td>" + data['presenter'] + "</td>" +
+            "<td>" + data['average'] + "</td>" +
           "</tr>"
         $('.project-' + data['id']).after(text);
 

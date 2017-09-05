@@ -1,15 +1,7 @@
 <div class="status-bar">
 
   <div class="center">
-    <% Project.all.each do |project| %>
-      <div class="icon"></div>
-    <% end %>
-  </div>
-
-  <br>
-
-  <div class="center">
-    Voting as: <%= current_user.email %>
+    Voting as: <strong><%= current_user.username %></strong>
   </div>
 
 </div>

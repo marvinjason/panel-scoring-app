@@ -16,7 +16,7 @@ class PagesController < ApplicationController
 
   def dashboard
   	@projects = Project.all
-    @users = User.order(:email)
+    @users = User.order(:username)
   end
 
   def create
@@ -37,6 +37,6 @@ class PagesController < ApplicationController
 
   def score_params
     params.require(:score).permit(:id, :flow_balance,
-      :impact_factor, :conclusion, :question_and_answer, :attire)
+      :impact_factor, :conclusion, :question_and_answer, :presenter)
   end
 end

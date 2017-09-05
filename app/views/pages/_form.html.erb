@@ -9,7 +9,7 @@
     <br>
 
     <%= f.label :impact_factor, 'Impact Factor' %>
-    <%= f.label :impact_factor, '(10%)', class: 'label-description' %>
+    <%= f.label :impact_factor, '(15%)', class: 'label-description' %>
     <br>
     <%= f.number_field :impact_factor, min: 1, max: 10, required: true, placeholder: 'Rate from 1 to 10', class: 'form-control' %>
     <%= f.label :impact_factor, 'How significant the project is towards the community/industry', class: 'label-description' %>
@@ -32,11 +32,11 @@
     <br>
     <br>
 
-    <%= f.label :attire, 'Attire' %>
-    <%= f.label :attire, '(5%)', class: 'label-description' %>
+    <%= f.label :presenter, 'Presenter' %>
+    <%= f.label :presenter, '(—)', class: 'label-description' %>
     <br>
-    <%= f.number_field :attire, min: 1, max: 10, required: true, placeholder: 'Rate from 1 to 10', class: 'form-control' %>
-    <%= f.label :attire, 'How presentable the presenter is', class: 'label-description' %>
+    <%= f.number_field :presenter, min: 1, max: 10, required: true, placeholder: 'Rate from 1 to 10', class: 'form-control' %>
+    <%= f.label :presenter, 'How well the presenter communicated ideas', class: 'label-description' %>
     <br>
     <br>
     

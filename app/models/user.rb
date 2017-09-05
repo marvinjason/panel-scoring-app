@@ -5,4 +5,8 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable
 
   has_many :scores
+
+  def email_required?
+    false
+  end
 end

@@ -21,8 +21,10 @@ class NotificationsChannel < ApplicationCable::Channel
 
   def update(data)
     score = Score.find(data['id'])
+    
     ActionCable.server.broadcast 'notifications_channel', action: 'update', id: score.project.id,
-      email: score.user.email, flow_balance: score.flow_balance, impact_factor: score.impact_factor,
-      conclusion: score.conclusion, question_and_answer: score.question_and_answer, attire: score.attire
+      username: score.user.username, flow_balance: score.flow_balance, impact_factor: score.impact_factor,
+      conclusion: score.conclusion, question_and_answer: score.question_and_answer, presenter: score.presenter,
+      average: score.average
   end
 end

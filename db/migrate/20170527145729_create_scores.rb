@@ -5,7 +5,7 @@ class CreateScores < ActiveRecord::Migration[5.0]
       t.integer :impact_factor
       t.integer :conclusion
       t.integer :question_and_answer
-      t.integer :attire
+      t.integer :presenter
       t.integer :project_id
       t.integer :user_id
 
