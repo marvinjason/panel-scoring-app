@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   post 'pages/create'
 
+  get 'export', to: 'pages#export'
+
   mount ActionCable.server => '/cable'
 
 end
